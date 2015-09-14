@@ -35,7 +35,7 @@ class Resque_Log extends Psr\Log\AbstractLogger
 		if (!($level === Psr\Log\LogLevel::INFO || $level === Psr\Log\LogLevel::DEBUG)) {
 			fwrite(
 				STDOUT,
-				'[' . $level . '] ' . $this->interpolate($message, $context) . PHP_EOL
+				'[' . $level . '] [' . strftime('%T %Y-%m-%d') . '] ' . $this->interpolate($message, $context) . PHP_EOL
 			);
 		}
 	}
